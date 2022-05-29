@@ -12,16 +12,14 @@
 
 ::
 
-   Apt-get update
-   Apt-get upgrade
-   Apt-get dist-upgrade
+   apt update && apt dist-upgrade -y
 
 Перезапуск
 ~~~~~~~~~~
 
 ::
 
-   Reboot
+   reboot
 
 Установка
 =========
@@ -31,7 +29,7 @@
 
 ::
 
-   sudo apt install -y rsync git m4 build-essential patch unzip wget pkg-config libgmp-dev libev-dev libhidapi-dev libffi-dev opam jq
+   sapt install -y rsync git m4 build-essential patch unzip wget pkg-config libgmp-dev libev-dev libhidapi-dev libffi-dev opam jq mc tmux curl
 
 Убедитесь, что установлены рабочие версии Opam и OCaml
 ::
@@ -46,12 +44,13 @@ Cоздание нового пользователя
 
 ::
 
-   sudo adduser mineplex
+   adduser mineplex
 
 Переходим в нового пользователя, дальнейшие работы будут проводиться через него
 ::
 
    su mineplex
+   tmux
 
 Получение исходного кода
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +111,7 @@ Cоздание нового пользователя
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   ./mineplex-node run  --data-dir ~/mineplex-mainnet --rpc-addr 127.0.0.1:8732 --connections 15 --history-mode=archive
+   ./mineplex-node run  --data-dir ~/mineplex-mainnet --rpc-addr 127.0.0.1:8732 --connections 100 --history-mode=archive
 
 
 Не завершайте данный процесс, держите данную команду запущенной на протяжений всего времени. Завершить этот процесс = выключить ноду
